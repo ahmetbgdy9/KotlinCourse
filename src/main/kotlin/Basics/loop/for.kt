@@ -18,7 +18,7 @@ fun main() {
     val countryCodeArray = arrayOf("tr", "az", "en", "fr")
 
     for (value in countryCodeArray) {
-        print("$value")
+        print(value)
     }
 
     for (index in countryCodeArray.indices) {
