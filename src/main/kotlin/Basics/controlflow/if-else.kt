@@ -12,7 +12,7 @@ fun main() {
             println("Öğrenci Değil")
     }
 
-    // expression kullanimi. {} icerisindeki son satir, deger oalrak degiskene atanir
+    // expression kullanimi. {} icerisindeki son satir, deger olarak degiskene atanir
     val result: String = if  (answer == "Evet") {
         "Öğrenci"
     } else {
