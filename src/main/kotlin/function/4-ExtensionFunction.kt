@@ -80,7 +80,7 @@ fun main() {
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
   // normal fonksiyon
-    fun log2(number: Number) {
+fun log2(number: Number) {
         println(number)
     }
 
@@ -92,7 +92,7 @@ fun main() {
  *      agasidaki kod size emptyParam = "4", this = 3 olarak verilir
  */
 
-    infix fun Number.log(emptyParam: String) {
+infix fun Number.log(emptyParam: String) {
         println(emptyParam + this)
     }
 
@@ -107,16 +107,19 @@ infix fun String.extPlus(otherString: String): Int = this.toInt() + otherString.
 
 open class Shape {
 
+
     var intNumber: Int = 0
+
 
     fun setNumber(intNumber: Int) {
         this.intNumber = intNumber
     }
 
     fun main() {
-        intNumber.exToString()
+        intNumber.extToString()
         intNumber.log("")
     }
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -127,17 +130,17 @@ open class Shape {
      *      this@sinifismi.uyefonksiyon() seklinde cagrim yapilmalidir.
      */
 
-    open fun Int.exToString() {
+    open fun Int.extToString() {
         println("")
 
         // Int.extToString() methodunu isaret eder.
-        exToString()
+        extToString()
 
         // SHAPE'E ait asagidaki uye methodu isaret eder.
         this@Shape.extToString()
         println("Awesome class printi")
 
-        main()
+
     }
 
     fun extToString() {
@@ -152,5 +155,58 @@ open class Shape {
  *      Bir sinifin, yazilmis extension fonksiyonun aynisini (isim ayni, parametre sayisi ve tipleri ayni, ayrica geri donus )
  *      kendi icinde barindiriyorsa, bu durumda yazilan extension fonksiyon gecersizdir. sinifin uye fonksiyonu cagrilir.
  */
+
+fun Shape.setNumber(intNumber: Int) { //!!
+    val result = intNumber + intNumber
+    println(result)
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/**
+ *      Bİr sinifa extension fonksiyon yazilabildigi gibi ectension property de yazilabilir
+ *      Bunun sebebi aslında propertylerin get() ve set() methotlarından oluşşmasından dolayıdır
+ *      Bu extension property'lerin icerisinde field tanimlanamaz
+ *      Dolayisiyla aslinda gercek anlamda bir degisken extension yapilamaz.
+ *      Bu konu property vs feild konusunda sınıflarla detayladnırılacak
+ */
+
+
+var Shape.type
+    get() = "Rectangle"
+    set(value)  {
+        type = value
+    }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+/**
+ *      Open (Extend edilebilir) bir sinifa, sinifin icinde bir open (override edilebilir) extension fonksiyon yazilirsa
+ *      bu sinifi miras (inherit) olan siniflar, ilgili etension fonksiyonunu override edebilirler.
+ */
+
+/*
+class Reactangle : Shape() {
+    override fun Int.extToString() {
+    }
+}
+
+class Ashape() : Shape() {
+    fun deneme() {
+        4.extToString()
+    }
+}
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+/**
+ *      NOTES :
+ *      Nullable extension dunction da yazilabilir.
+ *      Companion object'lere de extension yazilabilir. Siniflar'da ornek yapılacak
+ */
+
+
 
 
