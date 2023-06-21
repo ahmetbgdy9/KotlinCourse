@@ -102,33 +102,6 @@ fun main() {
     //  parametre tipleri ile aynı ise, bu normal fonksiyon da higher function olarak normal bir fonksiyona
     //  olarak verilebilir. Bunu yapmak icin sadece basina :: isareti koymak yeterlidir
 
-    val news = News()
-    news.read(::println)
-    news.read({ title ->
-        print("dsada")
-    })
-
-    news.read { title ->
-        print(title)
-    }
-
-    news.read {
-        print(it)
-    }
-
-
-
-    val titleFun = fun(title: String): Unit {
-        print(title)
-    }
-    news.read(titleFun)
-
-   // printUserInfo
-   // printUserInfo
-   // printUserInfo
-   // printUserInfo
-
-    // Susulu parantezler (body) direkt olarak Higher order functon'in
 
 
 
