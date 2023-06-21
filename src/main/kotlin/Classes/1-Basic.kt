@@ -23,10 +23,10 @@ class  Car constructor(wheelCount: Int, color: String = "Red") {
     ) : this(wheelCount) {
         "1. secondary const. created".printLog()
 
-        // bussiness logic 1
+        // business logic 1
 
         if (name == null) {
-            //  bussiness logic 2
+            //  business logic 2
             return
         }
 
