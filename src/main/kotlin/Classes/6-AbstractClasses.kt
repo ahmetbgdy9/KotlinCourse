@@ -22,7 +22,7 @@ interface McDonaldsService {
 
 
 /**
- * Abstract classlar şablon class lar gibidir
+ * Abstract classlar şablon class lar gibidirzzzzz
  */
 
 abstract class MCDonalds {
