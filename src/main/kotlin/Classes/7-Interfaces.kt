@@ -172,3 +172,18 @@ interface Named {
         }
     }
 }
+
+/**
+ * interface yetenek seti gibidir.
+ *
+ */
+
+/**  İNTERFACE VS ABSTRACT
+ *
+ * interface yetenek seti gibidir. Abstract class bir sözleşme gibidir.
+ * ikisindede final ve open keywordünü kullanmak anlamsız.
+ * içerisinde inital değeri olmayan değişken(field) veya bodysi olmayan fonksiyoon yazabiliriz.
+ * istisnalar dışında implement,miras alındıkları durumlarda override edilmek zorunda.
+ * open olarak yazdığımız property veya fun override etmek zorunda değiliz.(mümkün olduğunca open ve düz kullanıım yapmammalıyız)
+ *
+ */

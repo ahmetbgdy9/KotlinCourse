@@ -145,4 +145,5 @@ class McCoffee
 /**
  * Abstract class bir sözleşme gibidir. child classlarda yapılması zorunlu olmasını istediklerimizi
  * abstract class larda topluyoruz dolayısıyla child classlarda daha az kod yazarak daha çok iş yapabilmemizi sağlar.
+ * final ve open keywordünü kullanmak anlamsız.
  */
