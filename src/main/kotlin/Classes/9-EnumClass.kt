@@ -11,23 +11,23 @@ package Classes
  *
  * ozunde class oldukları icin, constructor kullanabilirler ve bu constructor icerisinde veri tutabilirler.
  * java karsiliginda bu enum sabitleri static final class'lar seklinde tutulurlar. BU sayede, kullanırken
- bu sabitlerin nesnesini olusturmak zorunda kalmayiz
+bu sabitlerin nesnesini olusturmak zorunda kalmayiz
  *
  * Enum class larinin nesnesi olsturulamaz.
  *
  * Her enum sabiti final name:String ve final ordinal:Int degiskenlere  default olarak sahiptir.
- name ifadesi, enum'in kendisinin string halini verir
- ordinal ifadesi, enum'daki sabitin index'ini verir ve 0'dan baslar.
- bu degiskenler final olduklari icin, enum sabitleri icerisinde override edilemezler.
+name ifadesi, enum'in kendisinin string halini verir
+ordinal ifadesi, enum'daki sabitin index'ini verir ve 0'dan baslar.
+bu degiskenler final olduklari icin, enum sabitleri icerisinde override edilemezler.
  *
  * enum class'lar herhangi bir baska class'i miras alamazlar.
  * enum class'lar herangi bir interface'i implement edebilirler
  *
  * enum class'lar abstract property'ler ya da abstract func.'lar alabilirler
- Bunlari aldiklarinda tum sabitler bu abstract yapilari override etmek zorundadir.
+Bunlari aldiklarinda tum sabitler bu abstract yapilari override etmek zorundadir.
  *
  * bir open function da yazilabilir. open olmasindan dolayi override etne zorunlulugu yoktur.
- Ancak open olarak belirtilen func.'nun body'si olmak zorundadir.
+Ancak open olarak belirtilen func.'nun body'si olmak zorundadir.
  *
  */
 
@@ -37,7 +37,7 @@ interface TeamsFunctionality {
 }
 
 enum class ColorType {
-   RED, BLUE, WHITE, GREEN
+ RED, BLUE, WHITE, GREEN
 }
 
 enum class TeamsType(val starCount: Int) {
@@ -120,7 +120,7 @@ enum class Sex {
  abstract val typeCount: Int
  abstract fun isOptional()
  open fun log() {}
- }
+}
 
 fun main() {
  val fb = "FENERBAHÇE"
@@ -142,18 +142,72 @@ fun main() {
  println("4 Büyük takımdan birini taziniz : ")
  val team : String = readln()
 
+ val starCount = when {
+  team == fb -> {
+   3
+  }
+
+  team == gs -> {
+   4
+  }
+
+  team == bjk -> {
+   3
+  }
+
+  team == ts -> {
+   1
+  }
+  else -> {
+   -1
+  }
+ }
+
+ val starCount2 = when (team) {
+  Teams.FENERBAHÇE.toString() -> {
+   Teams.FENERBAHÇE.starCount
+  }
+  Teams.GALATASARAY.toString() -> {
+   Teams.GALATASARAY.starCount
+  }
+  Teams.BEŞİKTAŞ.toString() -> {
+   Teams.BEŞİKTAŞ.starCount
+  }
+  Teams.TRABZONSPOR.toString() -> {
+   Teams.TRABZONSPOR.starCount
+  }
+  else -> {
+   -1
+  }
+ }
+
+ val other = "OTHER"
+
+ println(DaysOfWeek.Carsamba.name)
+ println(DaysOfWeek.Carsamba.toString())
+
+ println(Teams.FENERBAHÇE.name)
+ println(Teams.FENERBAHÇE.toString())
+
+ println(DaysOfWeek.Carsamba.name)
+ println(DaysOfWeek.Carsamba.dayNumber)
 
 
 
+// FENERBAHÇE degeri enum olarak  yoksa, error firlatir.
+ Teams.valueOf("FENERBAHÇE")
 
+// Teams icerindeki tum enum constant'larini bir liste halinde doner.
+ Teams.values()
 
+  val bestTeam = getBestTeam(Teams.FENERBAHÇE)
 
+ println(bestTeam)
 
+}
 
-
-
-
-
+fun getBestTeam(team: Teams): Teams {
+ return team
 }
 
 
