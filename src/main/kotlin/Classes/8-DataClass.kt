@@ -30,8 +30,8 @@ data class News(
     val descrition: String,
     val hasMediaContent: Boolean,
     val mediaList: List<Media>
-){
-    val relatedNewsList : List<News> = arrayListOf()
+) {
+    val relatedNewsList: List<News> = arrayListOf()
     override fun toString(): String {
         return "return super.toString()"
     }
@@ -46,12 +46,12 @@ class NewsData(
     val descrition: String,
     val hasMediaContent: Boolean,
     val mediaList: List<Media>
-){
+) {
     override fun toString(): String =
         "News(title=" + this.title + ", description = " + this.descrition + ", hasMediaContent =" + this.hasMediaContent + ", mediaList=" + this.mediaList
 
     fun copy(): NewsData {
-        return NewsData(title,descrition,hasMediaContent,mediaList)
+        return NewsData(title, descrition, hasMediaContent, mediaList)
     }
 }
 
@@ -59,7 +59,7 @@ class Media
 
 fun main() {
 
-    val newsOne = News (
+    val newsOne = News(
         title = "yeni dönem basladi",
         descrition = "egitim basladi",
         hasMediaContent = true,
@@ -101,8 +101,8 @@ fun main() {
     println("Data class tostring : $newsOne")
     println("class tostring : $newsTwo")
 
-    val pair = Pair("Ahmet","Buğday")
-    val (firtssad,asdas,asdsa) = Triple("ahmet","buğday",21)
+    val pair = Pair("Ahmet", "Buğday")
+    val (firtssad, asdas, asdsa) = Triple("ahmet", "buğday", 21)
 
 }
 

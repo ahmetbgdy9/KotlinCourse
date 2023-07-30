@@ -6,13 +6,12 @@ package Classes
 //  protected -->   class içinde ve child class lardan erişim, farklı herhangi biryere erişim kapatır
 //  internal  -->   sadece class içinde ve bağlı olduğu modüllerde erişim.
 
- //  1-> encapsullation : bir classın üye değişkenlerini private tutup, bu değiskene erisecek olan
+//  1-> encapsullation : bir classın üye değişkenlerini private tutup, bu değiskene erisecek olan
 //  fonksiyonları publicte tutma olayidir.
 //  2-> Top level tanımlamalar her hangi bir class'in içerisinde yer almadan
 //  basitçe bir dosyanın içerisinde değişken, fonksiyon tanımlayabilriz.
 //  3-> Protected tanimlama kotlin de top level olarak kullanılamaz.
 //  4-> internal kotlinde var javada yok
-
 
 
 open class Foo() {
@@ -24,9 +23,9 @@ open class Foo() {
 
     public var surName = "bugday"
 
-    protected  val email = "sfsdfsd@gmail.com" // child class larda public - harici tüm class'larda private
+    protected val email = "sfsdfsd@gmail.com" // child class larda public - harici tüm class'larda private
 
-    internal  val age = 22 // module içerisinde public harici modullerde private
+    internal val age = 22 // module içerisinde public harici modullerde private
 
     fun printName() {
         println("Merhaba : $name")
@@ -34,7 +33,8 @@ open class Foo() {
         println("Email : $email")
 
     }
-    fun getName():String {
+
+    fun getName(): String {
         return name
     }
 
@@ -59,7 +59,7 @@ open class Foo() {
 }
 
 
-class  Boo private  constructor(): Foo() {
+class Boo private constructor() : Foo() {
     init {
         // name erisilemez
         surName
@@ -71,10 +71,10 @@ class  Boo private  constructor(): Foo() {
 class Doo() {
     init {
         val foo = Foo()
-    //  foo.name
+        //  foo.name
         foo.surName
         foo.age
-    //  foo.email
+        //  foo.email
     }
 }
 
@@ -89,6 +89,6 @@ fun main() {
 //    foo.calculateArea(2,4)
 
     foo.downloadVideo("youtube.com/videourl")
-  //  foo.download("youtube.com/videourl")
+    //  foo.download("youtube.com/videourl")
 }
 

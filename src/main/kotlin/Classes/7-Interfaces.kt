@@ -16,10 +16,10 @@ interface MyInterface {
     val propertyWithImplementation: String
         get() = "Foo"
 
-//    fun getPropertyWithImplementation(): String{
+    //    fun getPropertyWithImplementation(): String{
 //        return "foo"
 //    }
-    fun foo()  {
+    fun foo() {
         print(prop)
     }
 
@@ -44,7 +44,6 @@ interface Named {
         override val fullName: String?
             get() = "$firstName $lastName"
     }
-
 
 
     /**
@@ -98,6 +97,7 @@ interface Named {
         override fun foo() {
             super.foo()
         }
+
         override fun foo2() {
 //            super.foo2() //hata verir
         }
@@ -111,6 +111,7 @@ interface Named {
         fun foo() {
             print("A")
         }
+
         fun bar()
     }
 
@@ -141,7 +142,7 @@ interface Named {
      *  bu yapilarin sonuna bakmaniz lazim. sonunda () parentezlerini goruyorsaniz : 'dan sonra
      *  gelen yapi class'tir (inheritance) miras alma islemi yapiliyordur. () yoksa interface'dir (implement.)
      *  islemi yapılıyor
-      */
+     */
 
     open class E() {
 
@@ -159,7 +160,7 @@ interface Named {
      *  override eilmeleri zorunludur.
      */
 
-    class D: E(),A,B {
+    class D : E(), A, B {
         override fun foo() {
             super<A>.foo()
             super<B>.foo()

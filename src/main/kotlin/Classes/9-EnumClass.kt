@@ -1,6 +1,5 @@
 package Classes
 
-
 /**
  * Tip guvenligini (type-safety) saglar.
  * kullanim amaci ayni veri kumlerinin gruplanabilir olmasını saglar
@@ -31,183 +30,192 @@ Ancak open olarak belirtilen func.'nun body'si olmak zorundadir.
  *
  */
 
-
 interface TeamsFunctionality {
- fun practice()
+    fun practice()
 }
 
 enum class ColorType {
- RED, BLUE, WHITE, GREEN
+    RED, BLUE, WHITE, GREEN
 }
 
 enum class TeamsType(val starCount: Int) {
- FENERBAHÇE(3),
- GALATASARAY(4),
- BEŞİKTAŞ(3),
- TRABZONSPOR(1)
+    FENERBAHÇE(3),
+    GALATASARAY(4),
+    BEŞİKTAŞ(3),
+    TRABZONSPOR(1)
 }
 
-enum class Teams(val starCount:Int) : TeamsFunctionality {
- FENERBAHÇE(3) {
-  override fun practice() {
-   TODO("Not yet implemented")
-  }
- },
+enum class Teams(val starCount: Int) : TeamsFunctionality {
+    FENERBAHÇE(3) {
+        override fun practice() {
+            TODO("Not yet implemented")
+        }
+    },
 
- GALATASARAY(4) {
-  override fun practice() {
-   TODO("Not yet implemented")
-  }
- },
+    GALATASARAY(4) {
+        override fun practice() {
+            TODO("Not yet implemented")
+        }
+    },
 
- BEŞİKTAŞ(2) {
-  override fun practice() {
-   TODO("Not yet implemented")
-  }
- },
+    BEŞİKTAŞ(2) {
+        override fun practice() {
+            TODO("Not yet implemented")
+        }
+    },
 
- TRABZONSPOR(1) {
-  override fun practice() {
-   TODO("Not yet implemented")
-  }
- }
+    TRABZONSPOR(1) {
+        override fun practice() {
+            TODO("Not yet implemented")
+        }
+    }
 
 }
 
 enum class DaysOfWeek(val dayNumber: Int) {
- Pazartesi(1),
- Sali(2),
- Carsamba(3),
- Persembe(4),
- Cuma(5),
- Cumartesi(6),
- Pazar(7)
+    Pazartesi(1),
+    Sali(2),
+    Carsamba(3),
+    Persembe(4),
+    Cuma(5),
+    Cumartesi(6),
+    Pazar(7)
 }
 
 enum class Sex {
- Male {
-  override val typeCount: Int
-   get() = TODO("Not yet implemented")
+    Male {
+        override val typeCount: Int
+            get() = TODO("Not yet implemented")
 
-  override fun isOptional() {
-   TODO("Not yet implemented")
-  }
+        override fun isOptional() {
+            TODO("Not yet implemented")
+        }
 
-  override fun log() {
-   super.log()
-   println("MALE")
-  }
- },
+        override fun log() {
+            super.log()
+            println("MALE")
+        }
+    },
 
- Female {
-  override val typeCount: Int
-   get() = TODO("Not yet implemented")
+    Female {
+        override val typeCount: Int
+            get() = TODO("Not yet implemented")
 
-  override fun isOptional() {
-   TODO("Not yet implemented")
-  }
- },
+        override fun isOptional() {
+            TODO("Not yet implemented")
+        }
+    },
 
- Other {
-  override val typeCount: Int
-   get() = TODO("Not yet implemented")
+    Other {
+        override val typeCount: Int
+            get() = TODO("Not yet implemented")
 
-  override fun isOptional() {
-   TODO("Not yet implemented")
-  }
- };
+        override fun isOptional() {
+            TODO("Not yet implemented")
+        }
+    };
 
- abstract val typeCount: Int
- abstract fun isOptional()
- open fun log() {}
+    abstract val typeCount: Int
+    abstract fun isOptional()
+    open fun log() {}
 }
 
 fun main() {
- val fb = "FENERBAHÇE"
- val gs = "GALATASARAY"
- val bjk = "BEŞİKTAŞ"
- val ts =  "TRABZONSPOR"
+    val fb = "FENERBAHÇE"
+    val gs = "GALATASARAY"
+    val bjk = "BEŞİKTAŞ"
+    val ts = "TRABZONSPOR"
 
- val pzt = "Pazartesi"
- val sal = "Salı"
- val car = "Çarşamba"
- val per = "Perşembe"
- val cum = "Cuma"
- val cmt = "Cumartesi"
- val paz = "Pazar"
+    val pzt = "Pazartesi"
+    val sal = "Salı"
+    val car = "Çarşamba"
+    val per = "Perşembe"
+    val cum = "Cuma"
+    val cmt = "Cumartesi"
+    val paz = "Pazar"
 
- val male = "MALE"
- val female = "FEMALE"
+    val male = "MALE"
+    val female = "FEMALE"
 
- println("4 Büyük takımdan birini taziniz : ")
- val team : String = readln()
+    println("4 Büyük takımdan birini taziniz : ")
+    val team: String = readln()
 
- val starCount = when {
-  team == fb -> {
-   3
-  }
+    val starCount = when {
+        team == fb -> {
+            3
+        }
 
-  team == gs -> {
-   4
-  }
+        team == gs -> {
+            4
+        }
 
-  team == bjk -> {
-   3
-  }
+        team == bjk -> {
+            3
+        }
 
-  team == ts -> {
-   1
-  }
-  else -> {
-   -1
-  }
- }
+        team == ts -> {
+            1
+        }
 
- val starCount2 = when (team) {
-  Teams.FENERBAHÇE.toString() -> {
-   Teams.FENERBAHÇE.starCount
-  }
-  Teams.GALATASARAY.toString() -> {
-   Teams.GALATASARAY.starCount
-  }
-  Teams.BEŞİKTAŞ.toString() -> {
-   Teams.BEŞİKTAŞ.starCount
-  }
-  Teams.TRABZONSPOR.toString() -> {
-   Teams.TRABZONSPOR.starCount
-  }
-  else -> {
-   -1
-  }
- }
+        else -> {
+            -1
+        }
+    }
 
- val other = "OTHER"
+    val starCount2 = when (team) {
+        Teams.FENERBAHÇE.toString() -> {
+            Teams.FENERBAHÇE.starCount
+        }
 
- println(DaysOfWeek.Carsamba.name)
- println(DaysOfWeek.Carsamba.toString())
+        Teams.GALATASARAY.toString() -> {
+            Teams.GALATASARAY.starCount
+        }
 
- println(Teams.FENERBAHÇE.name)
- println(Teams.FENERBAHÇE.toString())
+        Teams.BEŞİKTAŞ.toString() -> {
+            Teams.BEŞİKTAŞ.starCount
+        }
 
- println(DaysOfWeek.Carsamba.name)
- println(DaysOfWeek.Carsamba.dayNumber)
+        Teams.TRABZONSPOR.toString() -> {
+            Teams.TRABZONSPOR.starCount
+        }
 
+        else -> {
+            -1
+        }
+    }
+
+    val other = "OTHER"
+
+    /* println(DaysOfWeek.Carsamba.name)
+     println(DaysOfWeek.Carsamba.toString())
+
+     println(Teams.FENERBAHÇE.name)
+     println(Teams.FENERBAHÇE.toString())
+
+     println(DaysOfWeek.Carsamba.name)
+     println(DaysOfWeek.Carsamba.dayNumber)*/
 
 
 // FENERBAHÇE degeri enum olarak  yoksa, error firlatir.
- Teams.valueOf("FENERBAHÇE")
+    Teams.valueOf("FENERBAHÇE")
 
 // Teams icerindeki tum enum constant'larini bir liste halinde doner.
- Teams.values()
+    Teams.values()
 
-  val bestTeam = getBestTeam(Teams.FENERBAHÇE)
+    val bestTeam = getBestTeam(Teams.FENERBAHÇE)
 
- println(bestTeam)
+    val bestestTeam = getBestTeam("FENERBAHE")
+
+    println(bestTeam)
 
 }
 
+fun getBestTeam(team: String): String {
+    return team
+}
+
 fun getBestTeam(team: Teams): Teams {
- return team
+    return team
 }
 
 

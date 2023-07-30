@@ -3,10 +3,10 @@ package Classes
 import java.time.Clock
 
 interface McDonaldsService {
-     fun motoCarrierr()
+    fun motoCarrierr()
 
 //     fun sellCoffee(): McCoffee
- }
+}
 
 
 /**
@@ -33,7 +33,7 @@ abstract class MCDonalds {
     abstract val employeeThree: Employee
     abstract val menuList: List<McHamburger>
 
-//    val specialBranchName: String = "Taksim"
+    //    val specialBranchName: String = "Taksim"
     abstract fun clean(clock: Int)
 //    abstract infix fun clean(clock: Int)
 
@@ -46,7 +46,7 @@ abstract class MCDonalds {
 //}
 
 abstract class McDonaldsExpress : MCDonalds() {
-    abstract fun  sellCoffee(): McCoffee
+    abstract fun sellCoffee(): McCoffee
     override fun clean(clock: Int) {
         println("Clean time : $clock")
     }
@@ -73,9 +73,11 @@ class McDonaldsMaltepe : MCDonalds(), McDonaldsService {
         get() = TODO("Not yet implemented")
     override val menuList: List<McHamburger>
         get() = TODO("Not yet implemented")
+
     override fun clean(clock: Int) {
         TODO("Not yet implemented")
     }
+
     override fun motoCarrierr() {
         TODO("Not yet implemented")
     }
@@ -99,6 +101,7 @@ class McDonaldsKadikoy : MCDonalds() {
         get() = TODO("Not yet implemented")
     override val menuList: List<McHamburger>
         get() = TODO("Not yet implemented")
+
     override fun clean(clock: Int) {
         TODO("Not yet implemented")
     }
@@ -108,10 +111,12 @@ class McDonaldsKadikoy : MCDonalds() {
         get() = Police()
 
 }
+
 class McDonaldsMaltepeExpress : McDonaldsExpress() {
     override fun sellCoffee(): McCoffee {
         TODO("Not yet implemented")
     }
+
     override val fridge: Fridge
         get() = TODO("Not yet implemented")
     override val superVisor: SuperVisor
@@ -124,6 +129,7 @@ class McDonaldsMaltepeExpress : McDonaldsExpress() {
         get() = TODO("Not yet implemented")
     override val menuList: List<McHamburger>
         get() = TODO("Not yet implemented")
+
     override fun clean(clock: Int) {
         super.clean(clock)
         println("Clean flor : 1")
@@ -137,8 +143,8 @@ fun main() {
 class Fridge
 class SuperVisor
 class Employee
-class  McHamburger
-class  Police
+class McHamburger
+class Police
 class McCoffee
 
 

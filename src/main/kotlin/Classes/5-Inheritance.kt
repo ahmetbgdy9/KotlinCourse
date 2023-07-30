@@ -64,11 +64,12 @@ class Rectangle(name: String) : Shape(name) {
         println(rectangle)
     }
 }
-class Circle(name: String, color: String) : Shape(name, color) {
-        override fun drawShape() {
-            super.drawShape()
 
-            val circle = """"
+class Circle(name: String, color: String) : Shape(name, color) {
+    override fun drawShape() {
+        super.drawShape()
+
+        val circle = """"
                .....
             ddddddddddd
          dd            dd
@@ -88,12 +89,12 @@ class Circle(name: String, color: String) : Shape(name, color) {
          dddddddddddddd
          
          """".trimIndent()
-            println(circle)
-        }
+        println(circle)
     }
+}
 
 
-open class Square(name: String,color: String,edgeCount: Int) : Shape(name,color, edgeCount) {
+open class Square(name: String, color: String, edgeCount: Int) : Shape(name, color, edgeCount) {
     final override fun drawShape() {
         val square = """
             **********
@@ -109,8 +110,8 @@ open class Square(name: String,color: String,edgeCount: Int) : Shape(name,color,
 fun main() {
     val shape = Shape("Shape")
     val rectangle = Rectangle("Rectangle")
-    val circle = Circle("Circle","Magenta")
-    val square = Square("Square","Cyan",4)
+    val circle = Circle("Circle", "Magenta")
+    val square = Square("Square", "Cyan", 4)
 
     shape.drawShape()
 

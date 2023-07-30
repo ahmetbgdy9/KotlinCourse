@@ -4,7 +4,7 @@ package Classes
 // constructor, yazmak  zorunda değilizvisibilty gibi zorunluluklarımız yoksa ,primary constructor
 // init bloğu primary constructor'ın çağrımında çalışıyor
 // secondary constuctor'ın en sonuna primary constructor'ı işaret etmemiz gerekiyor (this(wheelCount))
-class  Car constructor(wheelCount: Int, color: String = "Red") {
+class Car constructor(wheelCount: Int, color: String = "Red") {
 
     private val mWheelCount: Int
     private val mColor = color
@@ -47,12 +47,13 @@ class  Car constructor(wheelCount: Int, color: String = "Red") {
 
     }
 }
+
 fun main() {
     val car0 = Car(3)
-    val car1= Car(3,"Black")
-    val car2 = Car(3,"Black","BMW")
-    val car3 = Car(3,"Blac","BMW","Metal")
-    val car4 = Car(3,"Blac","BMW","Metal",true)
+    val car1 = Car(3, "Black")
+    val car2 = Car(3, "Black", "BMW")
+    val car3 = Car(3, "Blac", "BMW", "Metal")
+    val car4 = Car(3, "Blac", "BMW", "Metal", true)
 }
 
 fun String.printLog() {
